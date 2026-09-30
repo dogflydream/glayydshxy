@@ -1,302 +1,390 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的导航页</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-image: url('http://files.unn.pp.ua/download/pictures%2Fbackground.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
-        
-        .header {
-            color: #fff;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-        
-        .search-container {
-            padding: 3rem;
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto 20px;
-        }
-        
-        .search-box {
-            width: 100%;
-            padding: 15px 18px;
-            font-size: 20px;
-            border: none;
-            border-radius: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            outline: none;
-            background-color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 12px;
-        }
-        
-        .link-item {
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
-            padding: 12px;
-            transition: all 0.2s;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            height: 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .link-item:hover {
-            background-color: rgba(255, 255, 255, 0.85);
-            transform: translateY(-2px);
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-        }
-        
-        .link-item a {
-            text-decoration: none;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            justify-content: center;
-        }
-        
-        .link-icon {
-            width: 24px;
-            height: 24px;
-            margin-bottom: 8px;
-            object-fit: contain;
-        }
-        
-        .link-text {
-            font-size: 14px;
-            text-align: center;
-            word-break: break-word;
-            max-width: 100%;
-        }
-        .foot_marker {
-            position: fixed;
-            bottom: 10px;
-            left: 0;
-            right: 0;
-            width: 100%;
-            text-align: center;
-            font-size: 12px;
-            color: rgba(255,255,255,0.8);
-            z-index: 999;
-            padding: 10px 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
-        }
-
-        .foot_marker a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            padding: 5px 10px;
-            border-radius: 15px;
-        }
-
-        .foot_marker a:hover {
-            color: #4388e0;
-        }        
-    </style>
-</head>
-<body>
-    <div class="search-container">
-        <form action="https://www.google.com/search" method="get" target="_blank">
-            <input class="search-box" type="text" name="q" placeholder="Google 搜索...">
-        </form>
-    </div>
-    
-    <div class="container">
-        <!-- 第一行 -->
-        <div class="link-item">
-            <a href="https://www.google.com" target="_blank">
-                <img class="link-icon" src="https://www.google.com/favicon.ico" alt="Google">
-                <span class="link-text">Google</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://www.baidu.com" target="_blank">
-                <img class="link-icon" src="https://www.baidu.com/favicon.ico" alt="Baidu">
-                <span class="link-text">Baidu</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://www.youtube.com" target="_blank">
-                <img class="link-icon" src="https://www.youtube.com/favicon.ico" alt="YouTube">
-                <span class="link-text">Youtube</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://mail.google.com/mail/u/0/" target="_blank">
-                <img class="link-icon" src="https://mail.google.com/favicon.ico" alt="Gmail">
-                <span class="link-text">Gmail</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://github.com" target="_blank">
-                <img class="link-icon" src="https://github.com/favicon.ico" alt="GitHub">
-                <span class="link-text">GitHub</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://ip.sb" target="_blank">
-                <img class="link-icon" src="https://ip.sb/favicon.ico" alt="IP SB">
-                <span class="link-text">ip.sb</span>
-            </a>
-        </div>
-        
-        <!-- 第二行 -->
-        <div class="link-item">
-            <a href="https://dash.cloudflare.com" target="_blank">
-                <img class="link-icon" src="https://www.cloudflare.com/favicon.ico" alt="Cloudflare">
-                <span class="link-text">Cloudflare</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://chat.openai.com" target="_blank">
-                <img class="link-icon" src="https://chat.openai.com/favicon.ico" alt="ChatGPT">
-                <span class="link-text">Chatgpt</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://huggingface.co" target="_blank">
-                <img class="link-icon" src="https://huggingface.co/favicon.ico" alt="Hugging Face">
-                <span class="link-text">Huggingface</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://www.itdog.cn" target="_blank">
-                <i class="fas fa-network-wired link-icon"></i>
-                <span class="link-text">ITDOG - 在线ping</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://ping0.cc" target="_blank">
-                <i class="fas fa-database link-icon"></i>
-                <span class="link-text">Ping0</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="#" target="_blank">
-                <i class="fas fa-fingerprint link-icon"></i>
-                <span class="link-text">浏览器指纹</span>
-            </a>
-        </div>
-        
-        <!-- 第三行 -->
-        <div class="link-item">
-            <a href="https://ssss.nyc.mn" target="_blank">
-                <i class="fas fa-tachometer-alt link-icon"></i>
-                <span class="link-text">nezha面板</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://hoppscotch.io" target="_blank">
-                <img class="link-icon" src="https://discord.com/favicon.ico" alt="Discord">
-                <span class="link-text">Api测试</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://who.cx" target="_blank">
-                <i class="fas fa-globe link-icon"></i>
-                <span class="link-text">who.cx</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://www.domcomp.com" target="_blank">
-                <i class="fas fa-tags link-icon"></i>
-                <span class="link-text">域名比价</span>
-            </a>
-        </div>
-        
-        <div class="link-item">
-            <a href="https://www.nodeseek.com" target="_blank">
-                <i class="fas fa-server link-icon"></i>
-                <span class="link-text">NodeSeek</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://linux.do" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">Linux do</span>
-            </a>
-        </div>
-        
-        <!-- 第四行 -->
-        <div class="link-item">
-            <a href="https://music.gvrander.eu.org" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">在线音乐</span>
-            </a>           
-        </div>
-        <div class="link-item">
-            <a href="https://www.freereceivesms.com" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">免费接码</span>
-            </a> 
-        </div>
-        <div class="link-item">
-            <a href="https://sublink.eooce.com" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">订阅转换</span>
-            </a> 
-        </div>
-        <div class="link-item">
-            <a href="https://ssh.eooce.com" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">webssh</span>
-            </a> 
-        </div>
-        <div class="link-item">
-            <a href="https://filebox.nnuu.nyc.mn" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">文件快递柜</span>
-            </a> 
-        </div>
-        <div class="link-item">
-            <a href="https://address.nnuu.nyc.mn" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">真实地址生成</span>
-            </a> 
-        </div>
-
-        <!-- 版权 -->
-        <div class="foot_marker">
-        <a href="https://github.com/eooce" target="_blank">Powered by eooce</a>
-    </div>
-
-    <script>
-        document.querySelectorAll('.link-item:not(.empty)').forEach(item => {
-            const icon = item.querySelector('img.link-icon');
-            if (icon) {
-                icon.onerror = function() {
-                    this.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDJDNi40NzcgMiAyIDYuNDc3IDIgMTJzNC40NzcgMTAgMTAgMTAgMTAtNC40NzcgMTAtMTBTMTcuNTIzIDIgMTIgMnptMCAyYzQuNDE4IDAgOCAzLjU4MiA4IDhzLTMuNTgyIDgtOCA4LTgtMy41ODItOC04IDMuNTgyLTggOC04eiIgZmlsbD0iIzMzMyIvPjwvc3ZnPg==';
-                }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Hub · 个人导航</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cyber: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            neon: {
+              green: '#39ff14',
+              pink: '#ff2a6d',
+              purple: '#d300c5',
+              blue: '#05d9e8',
             }
-        });
-    </script>
+          },
+          fontFamily: {
+            mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-8px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: radial-gradient(ellipse at top, #0f172a 0%, #020617 70%);
+      min-height: 100vh;
+    }
+    .glass {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(56, 189, 248, 0.15);
+    }
+    .card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      box-shadow: 0 0 20px rgba(14, 165, 233, 0.15);
+      transform: translateY(-2px);
+    }
+    .search-glow:focus {
+      box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.4);
+    }
+  </style>
+</head>
+<body class="font-sans text-slate-200 antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 glass border-b border-cyan-500/10">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
+          <span class="text-xl">⚡</span>
+        </div>
+        <div>
+          <h1 class="text-lg font-semibold tracking-tight text-white">Digital Hub</h1>
+          <p class="text-xs text-slate-400 font-mono">个人科技导航</p>
+        </div>
+      </div>
+      <div class="hidden sm:flex items-center gap-2 text-xs text-slate-400 font-mono">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        ONLINE
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    <!-- Search -->
+    <div class="mb-10">
+      <div class="relative max-w-2xl mx-auto">
+        <input 
+          type="text" 
+          id="search"
+          placeholder="搜索资源 / Search resources..." 
+          class="w-full px-5 py-3.5 rounded-2xl glass search-glow outline-none text-slate-100 placeholder-slate-500 font-mono text-sm transition-all"
+        >
+        <div class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm font-mono">⌘K</div>
+      </div>
+    </div>
+
+    <!-- Categories Grid -->
+    <div class="space-y-10">
+
+      <!-- 编程开发 -->
+      <section>
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-xl">💻</span>
+          <h2 class="text-lg font-semibold text-white">编程开发</h2>
+          <span class="text-xs text-slate-500 font-mono ml-2">Programming</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+          <a href="https://github.com" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🐙</span>
+            <span class="text-sm font-medium">GitHub</span>
+          </a>
+          <a href="https://stackoverflow.com" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">📚</span>
+            <span class="text-sm font-medium">Stack Overflow</span>
+          </a>
+          <a href="https://developer.mozilla.org" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🦊</span>
+            <span class="text-sm font-medium">MDN Docs</span>
+          </a>
+          <a href="https://leetcode.com" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🧮</span>
+            <span class="text-sm font-medium">LeetCode</span>
+          </a>
+          <a href="https://codepen.io" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">✏️</span>
+            <span class="text-sm font-medium">CodePen</span>
+          </a>
+          <a href="https://vercel.com" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">▲</span>
+            <span class="text-sm font-medium">Vercel</span>
+          </a>
+          <a href="https://railway.app" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🚂</span>
+            <span class="text-sm font-medium">Railway</span>
+          </a>
+          <a href="https://npmjs.com" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">📦</span>
+            <span class="text-sm font-medium">npm</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Web3 & Crypto -->
+      <section>
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-xl">⛓️</span>
+          <h2 class="text-lg font-semibold text-white">Web3 & Crypto</h2>
+          <span class="text-xs text-slate-500 font-mono ml-2">Blockchain</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+          <a href="https://ethereum.org" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">💎</span>
+            <span class="text-sm font-medium">Ethereum</span>
+          </a>
+          <a href="https://uniswap.org" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🦄</span>
+            <span class="text-sm font-medium">Uniswap</span>
+          </a>
+          <a href="https://opensea.io" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🌊</span>
+            <span class="text-sm font-medium">OpenSea</span>
+          </a>
+          <a href="https://defillama.com" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🦙</span>
+            <span class="text-sm font-medium">DefiLlama</span>
+          </a>
+          <a href="https://etherscan.io" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🔍</span>
+            <span class="text-sm font-medium">Etherscan</span>
+          </a>
+          <a href="https://dune.com" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">📊</span>
+            <span class="text-sm font-medium">Dune Analytics</span>
+          </a>
+          <a href="https://mirror.xyz" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🪞</span>
+            <span class="text-sm font-medium">Mirror</span>
+          </a>
+          <a href="https://zora.co" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🖼️</span>
+            <span class="text-sm font-medium">Zora</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- AI & 智能工具 -->
+      <section>
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-xl">🤖</span>
+          <h2 class="text-lg font-semibold text-white">AI & 智能工具</h2>
+          <span class="text-xs text-slate-500 font-mono ml-2">Artificial Intelligence</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+          <a href="https://chat.openai.com" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🧠</span>
+            <span class="text-sm font-medium">ChatGPT</span>
+          </a>
+          <a href="https://claude.ai" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🎭</span>
+            <span class="text-sm font-medium">Claude</span>
+          </a>
+          <a href="https://grok.x.ai" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🚀</span>
+            <span class="text-sm font-medium">Grok</span>
+          </a>
+          <a href="https://huggingface.co" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🤗</span>
+            <span class="text-sm font-medium">Hugging Face</span>
+          </a>
+          <a href="https://midjourney.com" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🎨</span>
+            <span class="text-sm font-medium">Midjourney</span>
+          </a>
+          <a href="https://perplexity.ai" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🔎</span>
+            <span class="text-sm font-medium">Perplexity</span>
+          </a>
+          <a href="https://cursor.com" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">⌨️</span>
+            <span class="text-sm font-medium">Cursor</span>
+          </a>
+          <a href="https://v0.dev" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">✨</span>
+            <span class="text-sm font-medium">v0</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 学习资源 -->
+      <section>
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-xl">📖</span>
+          <h2 class="text-lg font-semibold text-white">学习资源</h2>
+          <span class="text-xs text-slate-500 font-mono ml-2">Learning</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+          <a href="https://www.coursera.org" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🎓</span>
+            <span class="text-sm font-medium">Coursera</span>
+          </a>
+          <a href="https://www.freecodecamp.org" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🔥</span>
+            <span class="text-sm font-medium">freeCodeCamp</span>
+          </a>
+          <a href="https://roadmap.sh" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🗺️</span>
+            <span class="text-sm font-medium">roadmap.sh</span>
+          </a>
+          <a href="https://dev.to" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">📝</span>
+            <span class="text-sm font-medium">DEV Community</span>
+          </a>
+          <a href="https://css-tricks.com" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🎯</span>
+            <span class="text-sm font-medium">CSS-Tricks</span>
+          </a>
+          <a href="https://web.dev" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🌐</span>
+            <span class="text-sm font-medium">web.dev</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 工具 & 效率 -->
+      <section>
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-xl">🛠️</span>
+          <h2 class="text-lg font-semibold text-white">工具 & 效率</h2>
+          <span class="text-xs text-slate-500 font-mono ml-2">Tools</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+          <a href="https://excalidraw.com" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">✏️</span>
+            <span class="text-sm font-medium">Excalidraw</span>
+          </a>
+          <a href="https://notion.so" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">📓</span>
+            <span class="text-sm font-medium">Notion</span>
+          </a>
+          <a href="https://linear.app" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">📐</span>
+            <span class="text-sm font-medium">Linear</span>
+          </a>
+          <a href="https://raycast.com" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">⚡</span>
+            <span class="text-sm font-medium">Raycast</span>
+          </a>
+          <a href="https://figma.com" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🎨</span>
+            <span class="text-sm font-medium">Figma</span>
+          </a>
+          <a href="https://canva.com" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🖼️</span>
+            <span class="text-sm font-medium">Canva</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 资讯 & 社区 -->
+      <section>
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-xl">📡</span>
+          <h2 class="text-lg font-semibold text-white">资讯 & 社区</h2>
+          <span class="text-xs text-slate-500 font-mono ml-2">News & Community</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+          <a href="https://news.ycombinator.com" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🟠</span>
+            <span class="text-sm font-medium">Hacker News</span>
+          </a>
+          <a href="https://www.producthunt.com" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🚀</span>
+            <span class="text-sm font-medium">Product Hunt</span>
+          </a>
+          <a href="https://x.com" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">𝕏</span>
+            <span class="text-sm font-medium">X / Twitter</span>
+          </a>
+          <a href="https://www.reddit.com/r/webdev" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">👽</span>
+            <span class="text-sm font-medium">r/webdev</span>
+          </a>
+          <a href="https://www.reddit.com/r/ethereum" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">🪙</span>
+            <span class="text-sm font-medium">r/ethereum</span>
+          </a>
+          <a href="https://www.theverge.com" target="_blank" class="card glass rounded-xl p-4 flex flex-col items-center gap-2 transition-all duration-200 hover:bg-slate-800/50">
+            <span class="text-2xl">📰</span>
+            <span class="text-sm font-medium">The Verge</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-16 py-8 border-t border-slate-800/50">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p class="text-sm text-slate-500 font-mono">
+        Built with <span class="text-cyan-400">Tailwind CSS</span> · 个人数字导航站
+      </p>
+      <p class="text-xs text-slate-600 mt-2">按需修改链接 · 打造你的专属科技中枢</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple search filter
+    const searchInput = document.getElementById('search');
+    const cards = document.querySelectorAll('.card');
+
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(query) || query === '') {
+          card.style.display = 'flex';
+          card.parentElement.parentElement.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Hide empty sections
+      document.querySelectorAll('section').forEach(section => {
+        const visibleCards = section.querySelectorAll('.card[style="display: flex;"], .card:not([style*="display: none"])');
+        const hasVisible = Array.from(section.querySelectorAll('.card')).some(c => c.style.display !== 'none');
+        section.style.display = hasVisible || query === '' ? 'block' : 'none';
+      });
+    });
+
+    // Keyboard shortcut ⌘K / Ctrl+K
+    document.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        searchInput.focus();
+      }
+    });
+  </script>
 </body>
 </html>
